@@ -1,0 +1,29 @@
+LEXIC
+
+Alphabet:
+	a. Lowercase (a-z) and uppercase (A-Z) letters of the English alphabet;
+	b. Underscore (_);
+	c. Decimal digits (0-9);
+	
+1. Lexic:
+a. Special symbols, representing:
+	- operators: + - * ** / ^ < <= = >= ==
+	- separators: [] {} :; space newline tab
+	- reserved words: 
+		if otherwise const of execute def Number String Char
+b. Identifiers
+	identifier = letter | letter{letter}{digit}
+	letter = "A"|"B"|...|"Z"|"a"|...|"z"
+	digit = "0"|"1"|...|"9"
+	symbol = "!"|"?"|"@"|"$"|"%"|...
+c. Constants
+	Number - rule:
+		nrConst = ["+"|"-"]no
+		no = digit{no}
+	Char - rule:
+		character = 'digit'|'letter'|'symbol'
+	String - rule:
+		strConst = "string"
+		string = char{string}
+		char = letter|digit|symbol
+

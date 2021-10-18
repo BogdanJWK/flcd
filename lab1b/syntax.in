@@ -1,0 +1,16 @@
+SYNTAX
+
+declist = declaration | declaration ";" declist
+declaration = "def" IDENTIFIER ":" type
+typesimple = "Number"|"String"|"Char"|"Boolean"|"Float"
+arraydecl = "[" typesimple "]" ["{" nr "}"]
+type = typesimple|arraydecl
+
+expression = expression ("+"|"-") term | term
+term = term ("*"|"**") factor | factor
+factor = "(" expression ")" | IDENTIFIER
+ifstmt = "if" "(" condition ")" ":" stmt ["otherwise" stmt]
+loop = "execute" "{" stmt "}" "times" nr
+condition = expression RELATION expression
+RELATION = "<" | "<=" | "=" | "<>" | ">=" | ">"
+
