@@ -1,0 +1,11 @@
+
+# compute the 2nd order equation result => ax^2 + bx + c = 0
+
+def a:Number = 1;
+def b:Number = 4;
+def c:Number = 4;
+
+def d:Number = b**2 + 4*a*c;
+def x1:Number = ((-b) + sqrt(d))/2;
+def x2:Number = ((-b) - sqrt(d))/2;
+log([x1,x2]);
