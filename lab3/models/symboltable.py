@@ -1,4 +1,4 @@
-from hashtable import HashTable
+from models.hashtable import HashTable
 
 class SymbolTable:
     
@@ -19,11 +19,3 @@ class SymbolTable:
 
     def position(self, e):
         return self.__hashTable.position(e)
-
-
-st = SymbolTable(8)
-st.add('a')
-st.add('de')
-st.add('3')
-st.add('34')
-print(st)

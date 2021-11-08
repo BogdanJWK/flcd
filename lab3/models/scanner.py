@@ -10,10 +10,13 @@ class Scanner:
         return re.match(r'^[a-z]([a-zA-Z]|[0-9])*$', token) is not None
 
     def isConstant(self, token):
-        return re.match(r'^(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\'.*\'$', token) is not None
+        return re.match(r'^(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\".*\"$', token) is not None
 
     def isSymbol(self, token):
-        return token in self._symbols.reserved + self._symbols.separators + self._symbols.separators
+        return token in self._symbols.reserved + self._symbols.separators + self._symbols.operators
+
+    def isComment(self, token):
+        return token in self._symbols.comments
 
     def isPartOfOperator(self, char):
         for op in self._symbols.operators:
@@ -43,7 +46,7 @@ class Scanner:
         index = startIndex
 
         while index < len(line) and quotes < 2:
-            if line[index] == '\'' or line[index] == '\"':
+            if line[index] == '\"':
                 quotes += 1
             token += line[index]
             index += 1
@@ -66,7 +69,7 @@ class Scanner:
                 tokens.append(token)
                 token = None  # reset token
 
-            elif line[index] == '\'':
+            elif line[index] == '\"':
                 if token:
                     tokens.append(token)
                 token, index = self.getStringToken(line, index)

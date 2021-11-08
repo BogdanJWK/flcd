@@ -5,6 +5,7 @@ class Symbols:
         self.reserved = []
         self.separators = []
         self.operators = []
+        self.comments = []
         self.reading = ''
         
         self.readTokens()
@@ -20,6 +21,8 @@ class Symbols:
                     self.reading = 'separators'
                 elif line == '$reserved$':
                     self.reading = 'reserved'
+                elif line == '$comment$':
+                    self.reading = 'comment'
                 else:
                     if line == '<space>': line = ' '
                     if self.reading == 'operators':
@@ -28,4 +31,6 @@ class Symbols:
                         self.separators.append(line)
                     elif self.reading == 'reserved':
                         self.reserved.append(line)
+                    elif self.reading == 'comment':
+                        self.comments.append(line)
                 line = f.readline()

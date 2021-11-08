@@ -15,9 +15,11 @@ $operators$
 +
 -
 *
+**
 /
 %
 =
++=
 <
 >
 <=
@@ -34,7 +36,10 @@ if
 else
 for
 execute
-number
-string
-float
+Number
+String
+Float
 times
+NULL
+$comment$
+#

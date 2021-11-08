@@ -3,17 +3,17 @@ log("n=");
 def n:Number = input();
 
 def sum:Number = 0;
-def min:Number; #undefined
+def min:Number;
 def max:Number;
 def nr:Number;
 
 execute {
-	log("nr=");
-	nr = input();
-	
-	sum += nr;
-	if min == NULL OR nr < min: min = nr;
-	if max == NULL OR nr > max: max = nr;
+   log("nr=");
+   nr = input();
+
+   sum += nr;
+   if min == NULL or nr < min: min = nr;
+   if max == NULL or nr > max: max = nr;
 } times n;
 
 log("sum="+sum);

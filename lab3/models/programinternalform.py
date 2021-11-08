@@ -7,6 +7,6 @@ class PIF:
 
     def __str__(self):
         result = ""
-        for pair in self.__content:
+        for pair in self.__data:
             result += pair[0] + "->" + str(pair[1]) + "\n"
         return result

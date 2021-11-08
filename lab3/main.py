@@ -1,7 +1,9 @@
 from models.symbols import Symbols
 from models.scanner import Scanner
+from models.analyzer import Analyzer
 
 symbols = Symbols("token.in")
 scanner = Scanner(symbols)
+analyzer = Analyzer(scanner)
 
-print(scanner.tokenize("var x = 3; y = 6;"))
+analyzer.analyze("p1error.txt")
