@@ -1,6 +1,6 @@
 Symbol Table:
 0: deque([])
-1: deque(['a', '10'])
+1: deque(['a'])
 2: deque(['b', 'log'])
 3: deque(['c'])
 4: deque(['4'])

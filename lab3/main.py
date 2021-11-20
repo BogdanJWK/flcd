@@ -6,4 +6,4 @@ symbols = Symbols("token.in")
 scanner = Scanner(symbols)
 analyzer = Analyzer(scanner)
 
-analyzer.analyze("p1error.txt")
+analyzer.analyze("p1.txt")
